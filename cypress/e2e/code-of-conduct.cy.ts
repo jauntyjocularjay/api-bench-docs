@@ -19,7 +19,7 @@ describe('home', () => {
       .should('eq', 'Contributor Covenant Code of Conduct',);
   },);
   it('link to self exists', () => {
-    cy.get('footer a[href="/code-of-conduct/"]',)
+    cy.get(`footer a[href="${ page['code-of-conduct'] }"]`,)
       .invoke('text',)
       .should('eq', 'Code of Conduct',);
   },);

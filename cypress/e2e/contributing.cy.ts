@@ -19,9 +19,14 @@ describe('contributing', () => {
       .should('eq', 'Contributing Guidelines',);
   },);
   it('link to self exists', () => {
-    cy.get('header nav a[href="/contributing/"]',)
+    cy.get('#dropdown-contributing',)
       .invoke('text',)
-      .should('eq', 'Contributing',);
+      .should('eq', 'Contributors',);
+
+    cy.get('#dropdown-contributing',)
+      .should('have.attr', 'href',)
+      .should('not.be.empty',)
+      .should('contain', page.contributing,);
   },);
   it('breadcrumbs exists', () => {
     cy.get('nav.breadcrumbs a[href="/"]',)

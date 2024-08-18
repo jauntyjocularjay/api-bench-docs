@@ -19,9 +19,13 @@ describe('usage/autowiring', () => {
       .should('eq', 'Autowiring Route Parameters',);
   },);
   it('link to self exists', () => {
-    cy.get('header nav a[href="/usage/autowiring/"]',)
+    cy.get('#usage-menu > li:nth-child(1) > a:nth-child(1)',)
       .invoke('text',)
       .should('eq', 'Autowiring',);
+    cy.get('#usage-menu > li:nth-child(1) > a:nth-child(1)',)
+      .should('have.attr', 'href',)
+      .should('not.be.empty',)
+      .should('contain', page.autowiring,);
   },);
   it('breadcrumbs exists', () => {
     cy.get('nav.breadcrumbs a[href="/"]',)
